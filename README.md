@@ -8,19 +8,19 @@ parses it, tests it for validity, and then makes the move.
 
 For example:
 
-import board
+    import board
 
-b = board.Board()
-b.initialize()
+    b = board.Board()
+    b.initialize()
 
-with open('pgn.txt', 'r') as f:
-    for line in f:
-        for move in line.strip().split():
-            # Drop the leading . if there is one
-            code = move.split('.')[-1]
+    with open('pgn.txt', 'r') as f:
+        for line in f:
+            for move in line.strip().split():
+                # Drop the leading . if there is one
+                code = move.split('.')[-1]
 
-            if code:
-                b.movePGN(code)
+                if code:
+                    b.movePGN(code)
 
 Parsing PGN notation is actually much harder than it looks because of all
 of the odd corner cases.  For example, there may be two pieces that could be
